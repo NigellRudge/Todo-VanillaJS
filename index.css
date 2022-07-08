@@ -26,6 +26,7 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     background-repeat: no-repeat;
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -99,10 +100,8 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .todo-input{
-    flex-grow: 6;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
+    flex-grow: 10;
+    padding: 15px 10px;
     border-radius: 6px;
     border-width: 1px;
     border: 1px solid rgb(183, 183, 183);
@@ -120,23 +119,31 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     color: white; 
 }
 .add-button {
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+    margin: 5px;
+    padding: 15px 15px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    /* box-shadow: 0 0 20px #eee; */
+    border: none;
+    border-radius: 10px;
     flex-grow: 1;
-    margin-left: 2px;
-    padding: 10px;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: 18px;
     border-radius: 6px;
-    border: 2px solid #1d82f6 ;
-    background-color: #268bfc;
 }
 
 .add-button:hover{
-    background-color: #0e7af7 ;
     transition:  100ms;
-    
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
 
 .add-button:hover > .add-button-icon{
@@ -152,9 +159,9 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     flex-direction: column;
 }
 .header-text {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
-    color: #393a3b;
+    color: #f6f6f6;
 }
 
 .item-count {
