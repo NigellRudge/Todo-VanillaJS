@@ -12,26 +12,35 @@
     <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
 </head>
 <body>
-    <span class="header-text"> Todo redux example</span>
+
     <div class="app">
-        <div class="header-text-container">
-            <div class="item-count-container">
-                <span class="item-count">0 item</span>
-            </div>
+        <div class="header">
+            <h1 class="header-text">Todo example</h1>
         </div>
-        <div class="todo-input-container">
-            <input type="text" id="todoIput" placeholder="Todo title" class="todo-input" />
-            <button onclick="onAddClick(event)" class="add-button" id="addBtn">
-                  <div class="add-button-text">
-                    Add
-                  </div>
+        <div class="input-container">
+            <input type="text" id="title-input" oninput="onTextChange(event)" class="title-input">
+            <button class="submit-button disabled" onclick="addTodo(event)" disabled id="submitBtn">
+                <span class="button-text">Add</span>
             </button>
         </div>
-        <div class="todo-list-container">
-            <div class="todo-list" id="todoList">
-                
+        <div class="filter-container">
+            <div class="filter active">
+                All
+            </div>
+            <div class="filter">
+                Pending
+            </div>
+            <div class="filter">
+                Completed
             </div>
         </div>
+        <div class="list-container">
+            <div id="loading-container" class="loading-container">
+                <div class="loading"></div>
+            </div>
+            <div class="list" id="list"></div>
+        </div>
+        
     </div>
     <script text="javascript" src="index.js"></script>
 </body>
