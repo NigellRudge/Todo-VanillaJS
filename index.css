@@ -17,9 +17,9 @@ body {
 .app {
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 9px;
+  border-radius: 4px;
   background-color: white;
-  min-width: 600px;
+  min-width: 700px;
   display: flex;
   flex-direction: column;
   height: 600px;
@@ -85,6 +85,9 @@ body {
 
 .filter {
   cursor:pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding:10px 10px 0 10px;
   margin: 0 5px 0 5px;
 }
@@ -200,4 +203,38 @@ body {
 
 .show {
   display: block!important;
+}
+
+.delete-all-container{
+  display: block;
+}
+
+.delete-all{
+  display: flex;
+  flex-direction: row;
+  padding:5px;
+}
+
+.delete-all-text{
+  color:rgb(119, 119, 119);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.delete-all > svg {
+  color:rgb(119, 119, 119);
+}
+.delete-all:hover .delete-all-text , .delete-all:hover >svg{
+  cursor: pointer;
+  color: rgb(255, 114, 114);
+}
+
+.filter-icon > svg {
+  color: rgb(174, 174, 174);
+  margin-right: 2px;
+}
+
+.filter.active > .filter-icon > svg {
+  color: rgb(18, 46, 2);
 }
