@@ -39,7 +39,7 @@ function getFilteredItems(){
 
 function getTodoItem(itemId){
     return store.todo.filter(function(element){
-        return element.id === itemId;
+        return element.id === parseInt(itemId);
     })[0];
 }
 
