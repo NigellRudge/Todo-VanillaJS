@@ -9,7 +9,7 @@ let store = {
 
     ],
     todo: [
-        
+
     ]
 }
 
@@ -32,26 +32,25 @@ const COMPLETE_ICON = `
 function getFilteredItems(){
     if(store.activeFilter == null)
         return store.todo;
-    let items = store.todo.filter(function(element){
-        return element.status == store.activeFilter
+    return store.todo.filter(function (element) {
+        return element.status === store.activeFilter
     })
-    return items
 }
 
 function getTodoItem(itemId){
     return store.todo.filter(function(element){
-        return element.id == itemId;
+        return element.id === itemId;
     })[0];
 }
 
 function generateTodoId(){
-    if(store.todo.length == 0)
+    if(store.todo.length === 0)
         return 1;
     let ids = store.todo.map(function(element){
         return element.id
     });
     let max = Math.max(...ids)
-    
+
     return max+1;
 }
 
@@ -88,7 +87,7 @@ function createTodoNode({id,title,status, color}){
                 </div>
                 <div class="item-action-container">
                     <div class="item-action">
-                        ${status == STATUS_TYPES.PENDING? PENDING_ICON : COMPLETE_ICON}
+                        ${status === STATUS_TYPES.PENDING? PENDING_ICON : COMPLETE_ICON}
                     </div>
                     <div class="item-action delete">
                         <svg id='delete-icon' xmlns="http://www.w3.org/2000/svg" onclick="deleteItem(event)" width="24" height="24" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -134,7 +133,7 @@ function completeItem(event){
     let status = parentNode.querySelectorAll('.item-content')[0]
                     .querySelectorAll('.item-info')[0]
                     .querySelectorAll('#item-status')[0];
-    
+
     let actionContainer =  parentNode.querySelectorAll('.item-action-container')[0]
                         .querySelectorAll('.item-action')[0];
 
@@ -199,9 +198,9 @@ function deleteItem(event){
 }
 
 function addTodo(event){
-    let button = event.target.classList.contains('button-text')? event.target.parentElement: event.target;    
+    let button = event.target.classList.contains('button-text')? event.target.parentElement: event.target;
     let input = document.getElementById('title-input')
-    if(input.value.length == 0){
+    if(input.value.length === 0){
         return;
     }
     let todo = {
@@ -244,5 +243,5 @@ document.addEventListener('DOMContentLoaded', function(event){
     setUpFilterEvents();
     populateList();
 
-    
+
 })
